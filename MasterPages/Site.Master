@@ -1,0 +1,281 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SFMSWeb.MasterPages.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html id="rrrrrrr">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE-10;IE-9;IE-8; IE-edge" />
+	<meta charset="UTF-8">
+	<title>SFMS</title>
+	<meta http-equiv="X-UA-Compatible" content="IE-edge" />
+
+	<script type="text/javascript">
+		addEventListener("load", function ()
+		{ setTimeout(hideURLbar, 0); }, false); function hideURLbar() { window.scrollTo(0, 1); }
+
+	</script>
+
+
+	<link href="../Content/sweetalert.css" rel="stylesheet" />
+	<script src="../Scripts/sweetalert.min.js"></script>
+
+	<%--    <link href="../Contents/simple-line-icons.min.css" rel="stylesheet" />--%>
+
+	<link href="../Content/css/skins/_all-skins.css" rel="stylesheet" />
+	<link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+	<link href="../Content/css/AdminLTE.css" rel="stylesheet" />
+	<link href="../assets/AdminLTE.min.css" rel="stylesheet" />
+	<link href="../Content/Site.css" rel="stylesheet" />
+
+	<%: Styles.Render("~/Content/css/bootstrap-slider")%>
+	<%--  <%: Styles.Render("~/Content/css/bootstrap") %>
+    <%: Styles.Render("~/Content/css/AdminLTE") %>--%>
+	<%: Styles.Render("~/Content/fonts/font-awesome/css/font-awesome.min.css")%>
+	<%: Styles.Render("~/Content/css/bootstrap-slider")%>
+	<%: Styles.Render("~/Content/css/bootstrap-wysihtml5")%>
+	<%: Styles.Render("~/Content/css/colorpicker")%>
+	<%: Styles.Render("~/Content/css/datatables")%>
+	<%: Styles.Render("~/Content/css/datepicker")%>
+	<%: Styles.Render("~/Content/css/daterangepicker")%>
+	<%: Styles.Render("~/Content/css/iCheck")%>
+	<%: Styles.Render("~/Content/css/ionslider")%>
+	<%: Styles.Render("~/Content/css/jvectormap")%>
+	<%--<%: Styles.Render("~/Content/css/morris") %>--%>
+	<%: Styles.Render("~/Content/css/timepicker")%>
+	<%: Styles.Render("~/Content/Site.css")%>
+	<%--   <%: Styles.Render("~/Content/css/FontCss/Font.css") %>
+    <%: Styles.Render("~/Content/css/FontCss/Font2.css") %>--%>
+	<%: Styles.Render("~/assets/simple-line-icons/simple-line-icons.min.css")%>
+    <link href="../assets/css/MyStyle.css" rel="stylesheet" />
+	
+	<script lang="ja">
+		function SucessfulInsert() {
+			swal({
+				title: "Inserted!",
+				text: "Record Inserted Sucessfully.",
+				type: "success",
+				confirmButtonColor: "rgb(53, 155, 255)"
+			});
+			//swal("Inserted!", "Record Inserted Sucessfully.", "success", "rgb(53, 155, 255)");
+		}
+		
+	</script>
+	<%--	<script src="../scripts/ajaxlibsjquery1.8.3jquery.min.js"></script>--%>
+	<%: Scripts.Render("~/bundles/jquery")%>
+	<%: Scripts.Render("~/bundles/bootstrap")%>
+	<%: Scripts.Render("~/bundles/jqueryui")%>
+	<%: Scripts.Render("~/bundles/datepicker")%>
+	<%--	<script src="../Scripts/MaskMoney.js"></script>
+	<script src="../assets/js/uncompressed/jquery.maskedinput.js"></script>--%>
+
+	<script src="../Scripts/app.min.js"></script>
+
+	<script src="../Scripts/AdminLTE/jquery.nicescroll.js"></script>
+	<script src="../Scripts/AdminLTE/scripts.js"></script>
+	<%--<script src="../Scripts/AdminLTE/jquery.nicescroll.js"></script>
+
+	<script src="../Scripts/AdminLTE/scripts.js"></script>--%>
+
+	<script src="../assets/highcharts/js/highcharts.js"></script>
+	<script src="../Assets/highcharts/js/modules/exporting.js"></script>
+	<script src="../Assets/highcharts/js/modules/offline-exporting.js"></script>
+	<script src="../Assets/highcharts/js/highcharts-3d.js"></script>
+	<script>
+		Highcharts.setOptions({
+			colors: ['#DE0303', '#93FB0B', '#00F1FD', '#0065FD', '#B300FD', '#E49808', '#1EFF05', '#DBB7FB']
+
+		});
+	</script>
+	<asp:ContentPlaceHolder runat="server" ID="scripts">
+	</asp:ContentPlaceHolder>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+	<header class="main-header">
+
+
+		<!-- Logo -->
+		<a href="#" class="logo">
+			<!-- mini logo for sidebar mini 50x50 pixels -->
+			<span class="logo-mini">SFMS</span>
+			<!-- logo for regular state and mobile devices -->
+			<span class="logo-lg" style="text-align:left"> <b>Std. Fee MS</b></span>
+		</a>
+		<!-- Header Navbar: style can be found in header.less -->
+		<nav class="navbar navbar-static-top" role="navigation">
+			<!-- Sidebar toggle button-->
+			<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+				<span class="sr-only">Toggle navigation</span>
+			</a>
+			<div class="navbar-custom-menu">
+				<ul class="nav navbar-nav" style="margin-bottom: 0px !important;">
+					<!-- Messages: style can be found in dropdown.less-->
+
+
+
+
+					<!-- User Account: style can be found in dropdown.less -->
+
+					<li class="dropdown user user-menu">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="glyphicon glyphicon-user"></i>
+							<span>
+								<asp:Literal Text="" runat="server" ID="LtUserName" />
+								<i class="caret"></i>
+							</span>
+						</a>
+						<ul class="dropdown-menu">
+							<!-- User image -->
+							<li class="user-header bg-light-blue" style="background-color: #1D74D6 !important;">
+								<img id="ImgUser" runat="server" class="img-circle" alt="User Image" src="~/assets/user-5.png" />
+								<p>
+									<%--<%   Response.Write(Session["FULL_NAME"].ToString()); %>--%>
+
+									<small>User since <%--<% Response.Write(DateTime.Parse(Session["CREATION_DATE"].ToString()).ToString("yyyy MMMM dd")); %> --%> </small>
+								</p>
+							</li>
+
+							<!-- Menu Footer-->
+							<li class="user-footer" style="background-color: #499BEA;">
+								<div class="pull-left">
+									<%--    Edit Profile link below --%>
+									<a href="../Pages/ChangePassword.aspx" class="btn btn-default btn-flat">Change Passwd</a>
+								</div>
+								<div class="pull-right">
+									<a href="<%=VirtualPathUtility.ToAbsolute("~/Login.aspx?logout=true")%>" class="btn btn-default btn-flat">Sign out</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<!-- Control Sidebar Toggle Button -->
+
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<div id="body">
+
+		<section>
+
+			<aside class="main-sidebar" style="/*background-color: rgb(60, 141, 188)*/
+background: linear-gradient(to bottom, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 43%, rgba(32,124,229,1) 55%, rgba(32,124,229,1) 100%) !important">
+				<!-- sidebar: style can be found in sidebar.less -->
+				<section class="sidebar">
+					<!-- Sidebar user panel -->
+
+					<ul class="sidebar-menu" runat="server" id="sidebarmenu">
+
+						<li class="active treeview">
+							<a href="#">
+								<i class="fa fa-dashboard"></i><span>Dashboard</span>
+							</a>
+
+						</li>
+
+
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-user"></i>
+								<span>Student</span>
+								<i class="fa fa-angle-left pull-right"></i>
+							</a>
+							<ul class="treeview-menu">
+
+								<li><a href="../Pages/AddStudents.aspx"><i class="fa fa-circle-o"></i>Enroll Student</a></li>
+								<li><a href="../Pages/StudentFee.aspx"><i class="fa fa-circle-o"></i>Fee Payment</a></li>
+
+								
+							</ul>
+						</li>
+
+
+						 
+						
+					
+					</ul>
+				</section>
+				<!-- /.sidebar -->
+			</aside>
+			<span style="display: none">
+				<asp:Literal ID="ltTabMenu" runat="server"></asp:Literal>
+			</span>
+			<form id="Form1" runat="server">
+				<aside class="right-side pad">
+					<%--class="col-sm-12 col-md-12"--%>
+					<asp:ScriptManager ID="sm" runat="server"></asp:ScriptManager>
+					<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+						
+						<ContentTemplate>
+
+							<section class="content" style="padding: 0px !important">
+								<div class="row">
+									<!-- left column -->
+									<div class="col-md-12">
+										<!-- general form elements -->
+
+										<asp:ContentPlaceHolder runat="server" ID="MainContent">
+										</asp:ContentPlaceHolder>
+
+
+									</div>
+								</div>
+							</section>
+						</ContentTemplate>
+
+					</asp:UpdatePanel>
+					<asp:UpdateProgress ID="UP" runat="server">
+						<ProgressTemplate>
+							<div id="dvupdateprogress" style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; background-color: black; opacity: .5; display: none;">
+								
+								<img style="position: relative; z-index: auto; left: 52%; top: 40%; width: 4%" src="<%:VirtualPathUtility.ToAbsolute("~/Content/img/progress.gif")%>" alt="Alternate Text" />
+
+
+							</div>
+						</ProgressTemplate>
+					</asp:UpdateProgress>
+
+				</aside>
+			</form>
+		</section>
+	</div>
+
+	<footer class="main-footer">
+		<div class="pull-right hidden-xs">
+		
+		</div>
+		<strong></strong>
+	</footer>
+
+	<!-- ./wrapper -->
+
+
+	<script type="text/javascript">
+		function ReloadPage() {
+
+			window.location.reload();
+		}
+		$('#dvupdateprogress').css('display', 'block');
+		
+		function onlyNumbers(evt) {
+			var e = event || evt; // for trans-browser compatibility
+			var charCode = e.which || e.keyCode;
+			if (charCode == 46 || charCode == 45)
+				return true;
+			else if (charCode > 31 && (charCode < 48 || charCode > 57 && charCode != 46))
+				return false;
+
+			return true;
+
+		}
+
+
+	</script>
+
+
+
+	<input type="hidden" id="selectPage" value="" clientidmode="Static" runat="server" />
+</body>
+</html>

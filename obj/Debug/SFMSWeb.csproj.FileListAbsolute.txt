@@ -1,0 +1,19 @@
+D:\personal\D Drive\ali\Sir Khalid data\Sir Khalid data\SFMSWeb\bin\BMSWeb.dll.config
+D:\personal\D Drive\ali\Sir Khalid data\Sir Khalid data\SFMSWeb\bin\BMSWeb.dll
+D:\personal\D Drive\ali\Sir Khalid data\Sir Khalid data\SFMSWeb\bin\BMSWeb.pdb
+D:\personal\D Drive\ali\Sir Khalid data\Sir Khalid data\SFMSWeb\bin\Microsoft.SqlServer.Types.dll
+D:\personal\D Drive\ali\Sir Khalid data\Sir Khalid data\SFMSWeb\obj\Debug\SFMSWeb.csproj.AssemblyReference.cache
+D:\personal\D Drive\ali\Sir Khalid data\Sir Khalid data\SFMSWeb\obj\Debug\SFMSWeb.csproj.ResolveComReference.cache
+D:\personal\D Drive\ali\Sir Khalid data\Sir Khalid data\SFMSWeb\obj\Debug\SFMSWeb.csproj.CoreCompileInputs.cache
+D:\personal\D Drive\ali\Sir Khalid data\Sir Khalid data\SFMSWeb\obj\Debug\SFMSWeb.csproj.CopyComplete
+D:\personal\D Drive\ali\Sir Khalid data\Sir Khalid data\SFMSWeb\obj\Debug\BMSWeb.dll
+D:\personal\D Drive\ali\Sir Khalid data\Sir Khalid data\SFMSWeb\obj\Debug\BMSWeb.pdb
+D:\SFMSWeb\SFMSWeb\bin\BMSWeb.dll.config
+D:\SFMSWeb\SFMSWeb\bin\BMSWeb.dll
+D:\SFMSWeb\SFMSWeb\bin\BMSWeb.pdb
+D:\SFMSWeb\SFMSWeb\obj\Debug\SFMSWeb.csproj.AssemblyReference.cache
+D:\SFMSWeb\SFMSWeb\obj\Debug\SFMSWeb.csproj.ResolveComReference.cache
+D:\SFMSWeb\SFMSWeb\obj\Debug\SFMSWeb.csproj.CoreCompileInputs.cache
+D:\SFMSWeb\SFMSWeb\obj\Debug\SFMSWeb.csproj.CopyComplete
+D:\SFMSWeb\SFMSWeb\obj\Debug\BMSWeb.dll
+D:\SFMSWeb\SFMSWeb\obj\Debug\BMSWeb.pdb

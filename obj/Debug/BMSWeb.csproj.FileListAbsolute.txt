@@ -1,0 +1,27 @@
+D:\tfsProjects\BMSWeb\bin\BMSWeb.dll.config
+D:\tfsProjects\BMSWeb\bin\BMSWeb.dll
+D:\tfsProjects\BMSWeb\bin\BMSWeb.pdb
+D:\tfsProjects\BMSWeb\bin\PAFHelpers.dll
+D:\tfsProjects\BMSWeb\bin\PAFHelpers.pdb
+D:\tfsProjects\BMSWeb\obj\Debug\BMSWeb.csprojResolveAssemblyReference.cache
+D:\tfsProjects\BMSWeb\obj\Debug\BMSWeb.csproj.ResolveComReference.cache
+D:\tfsProjects\BMSWeb\obj\Debug\BMSWeb.dll
+D:\tfsProjects\BMSWeb\obj\Debug\BMSWeb.pdb
+E:\Tfs Projects\BMSWeb\obj\Debug\BMSWeb.csprojResolveAssemblyReference.cache
+E:\Tfs Projects\BMSWeb\obj\Debug\BMSWeb.csproj.ResolveComReference.cache
+E:\Tfs Projects\BMSWeb\obj\Debug\BMSWeb.dll
+E:\Tfs Projects\BMSWeb\bin\BMSWeb.dll.config
+E:\Tfs Projects\BMSWeb\bin\BMSWeb.dll
+E:\Tfs Projects\BMSWeb\bin\BMSWeb.pdb
+E:\Tfs Projects\BMSWeb\bin\PAFHelpers.dll
+E:\Tfs Projects\BMSWeb\bin\PAFHelpers.pdb
+E:\Tfs Projects\BMSWeb\obj\Debug\BMSWeb.pdb
+E:\Sir Khalid data\BMSWeb\obj\Debug\BMSWeb.csprojResolveAssemblyReference.cache
+E:\Sir Khalid data\BMSWeb\obj\Debug\BMSWeb.csproj.ResolveComReference.cache
+E:\Sir Khalid data\BMSWeb\obj\Debug\BMSWeb.dll
+E:\Sir Khalid data\BMSWeb\bin\BMSWeb.dll.config
+E:\Sir Khalid data\BMSWeb\bin\BMSWeb.dll
+E:\Sir Khalid data\BMSWeb\bin\BMSWeb.pdb
+E:\Sir Khalid data\BMSWeb\bin\PAFHelpers.dll
+E:\Sir Khalid data\BMSWeb\bin\PAFHelpers.pdb
+E:\Sir Khalid data\BMSWeb\obj\Debug\BMSWeb.pdb

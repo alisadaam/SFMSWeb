@@ -1,0 +1,795 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BMSWeb.MasterPages.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html id="rrrrrrr">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE-10;IE-9;IE-8; IE-edge" />
+	<meta charset="UTF-8">
+	<title>PAF BMS</title>
+	<meta http-equiv="X-UA-Compatible" content="IE-edge" />
+
+	<script type="text/javascript">
+		addEventListener("load", function ()
+		{ setTimeout(hideURLbar, 0); }, false); function hideURLbar() { window.scrollTo(0, 1); }
+
+	</script>
+	
+
+	<link  href="../Content/sweetalert.css" rel="stylesheet" />
+	<script src="../Scripts/sweetalert.min.js"></script>
+
+	<%--    <link href="../Contents/simple-line-icons.min.css" rel="stylesheet" />--%>
+
+	<link href="../Content/css/skins/_all-skins.css" rel="stylesheet" />
+	<link href="../Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="../Content/css/AdminLTE.css" rel="stylesheet" />
+	<link href="../assets/AdminLTE.min.css" rel="stylesheet" />
+	<link href="../Content/Site.css" rel="stylesheet" />
+
+	<%: Styles.Render("~/Content/css/bootstrap-slider") %>
+	<%--  <%: Styles.Render("~/Content/css/bootstrap") %>
+    <%: Styles.Render("~/Content/css/AdminLTE") %>--%>
+	<%: Styles.Render("~/Content/fonts/font-awesome/css/font-awesome.min.css") %>
+	<%: Styles.Render("~/Content/css/bootstrap-slider") %>
+	<%: Styles.Render("~/Content/css/bootstrap-wysihtml5") %>
+	<%: Styles.Render("~/Content/css/colorpicker") %>
+	<%: Styles.Render("~/Content/css/datatables") %>
+	<%: Styles.Render("~/Content/css/datepicker") %>
+	<%: Styles.Render("~/Content/css/daterangepicker") %>
+	<%: Styles.Render("~/Content/css/iCheck") %>
+	<%: Styles.Render("~/Content/css/ionslider") %>
+	<%: Styles.Render("~/Content/css/jvectormap") %>
+	<%--<%: Styles.Render("~/Content/css/morris") %>--%>
+	<%: Styles.Render("~/Content/css/timepicker") %>
+	<%: Styles.Render("~/Content/Site.css") %>
+	<%--   <%: Styles.Render("~/Content/css/FontCss/Font.css") %>
+    <%: Styles.Render("~/Content/css/FontCss/Font2.css") %>--%>
+	<%: Styles.Render("~/assets/simple-line-icons/simple-line-icons.min.css") %>
+
+	<style>
+		@media (min-width: 768px) {
+			.sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > .treeview-menu {
+				top: 40px !important;
+				margin-left: 0;
+			}
+		}
+		th {
+			text-align: center;
+		}
+		.text-Align-Mid{
+			text-align: center;
+		}
+		body {
+			font-family: Arial !important;
+		}
+
+		.float-left {
+			float: left;
+		}
+
+		.Upper-case {
+			text-transform: uppercase;
+		}
+
+		.table-hover > tbody > tr:hover {
+			background-color: rgb(191, 220, 255) !important;
+			color: rgb(0, 76, 255) !important;
+		}
+
+		.border-color {
+			border-color: #B3D8F5 !important;
+		}
+
+		.main-sidebar, .left-side {
+			width: 175px !important;
+		}
+
+		.text-Align {
+			text-align: right;
+		}
+
+		.text-Align-span {
+			float: right;
+		}
+
+		.sweet-alert button {
+			background-color: rgb(53, 155, 255);
+			color: white;
+			border: none;
+			box-shadow: none;
+			font-size: 17px;
+			font-weight: 500;
+			-webkit-border-radius: 4px;
+			border-radius: 5px;
+			padding: 10px 32px;
+			margin: 26px 5px 0 5px;
+			cursor: pointer;
+		}
+
+			.sweet-alert button:hover {
+				background-color: rgb(27, 88, 150) !important;
+			}
+
+		.inline-foam-display {
+			Display: initial;
+			Width: 96%;
+			resize: none;
+		}
+
+		.skin-blue .sidebar a {
+			color: #FFFFFF;
+		}
+
+		.skin-blue .user-panel > .info, .skin-blue .user-panel > .info > a {
+			color: #FFFFFF;
+		}
+
+		.skin-blue .sidebar > .sidebar-menu > li {
+			border-top: 1px solid #fff;
+			border-bottom: 0px;
+		}
+
+		.sidebar-menu li > a > .pull-right {
+			position: absolute !important;
+			top: 50% !important;
+			right: -5px !important;
+			margin-top: -7px !important;
+		}
+
+		.skin-blue .user-panel > .image > img {
+			border: 1px solid #3C8DBC;
+		}
+
+		.skin-blue .treeview-menu > li > a {
+			color: #FFF;
+		}
+		/*Changes*/
+		.skin-blue .sidebar > .sidebar-menu > li > .treeview-menu {
+			margin: 0 1px;
+			/*background: rgba(0, 192, 239, 0.39);*/
+			background: #72B1FF;
+			/*background: rgb(4, 164, 204);*/
+		}
+
+		.skin-blue .main-header .navbar {
+			/* background-color: #3c8dbc; */
+			background: linear-gradient(to bottom, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 43%, rgba(32,124,229,1) 55%, rgba(32,124,229,1) 100%);
+		}
+
+		.skin-blue .main-header .logo {
+			background-color: #1D74D6;
+			color: #ffffff;
+			border-bottom: 0 solid transparent;
+		}
+		/**/
+		.skin-blue .sidebar > .sidebar-menu > li > a:hover, .skin-blue .sidebar > .sidebar-menu > li.active > a {
+			color: #222;
+			background: #f9f9f9 !important;
+		}
+
+		.sidebar-menu, .main-sidebar .user-panel, .sidebar-menu > li.header {
+			white-space: inherit !important;
+			overflow: hidden;
+		}
+
+		.Heading-color {
+			color: #207CE5;
+			margin-left: 15px;
+		}
+
+		@media (min-width: 768px) {
+			.sidebar-mini.sidebar-collapse .main-header .logo > .logo-mini {
+				display: block;
+				margin-left: -15px;
+				margin-right: -15px;
+				font-size: 15px;
+			}
+		}
+
+		.form-group {
+			margin-bottom: 6px;
+		}
+
+		.form-control {
+			height: 30px !important;
+			font-size: 12px !important;
+		}
+
+
+
+		.buttom-margin {
+			margin-bottom: 2px;
+		}
+
+		.vertical-align-mid {
+			vertical-align: middle;
+		}
+
+		.gradient {
+			background: linear-gradient(to bottom, rgb(73, 155, 234) 0%, rgb(73, 155, 234) 43%, rgb(32, 124, 229) 55%, rgb(32, 124, 229) 100%) repeat scroll 0% 0% transparent;
+			background: -ms-linear-gradient(to bottom, rgb(73, 155, 234) 0%, rgb(73, 155, 234) 43%, rgb(32, 124, 229) 55%, rgb(32, 124, 229) 100%) repeat scroll 0% 0% transparent;
+		}
+
+		.padingRight1px {
+			padding-right: 1px;
+		}
+
+		.padingLeft1px {
+			padding-left: 1px;
+		}
+
+		.padingRight5px {
+			padding-right: 5px;
+		}
+
+		.padingLeft5px {
+			padding-left: 5px;
+		}
+
+		.right-align {
+			text-align: right;
+		}
+
+		.pagination-ys {
+			/*display: inline-block;*/
+			padding-left: 0;
+			margin: 20px 0;
+			border-radius: 4px;
+		}
+
+			.pagination-ys table > tbody > tr > td {
+				display: inline;
+			}
+
+				.pagination-ys table > tbody > tr > td > a,
+				.pagination-ys table > tbody > tr > td > span {
+					position: relative;
+					float: left;
+					padding: 8px 12px;
+					line-height: 1.42857143;
+					text-decoration: none;
+					color: #dd4814;
+					background-color: #ffffff;
+					border: 1px solid #dddddd;
+					margin-left: -1px;
+				}
+
+				.pagination-ys table > tbody > tr > td > span {
+					position: relative;
+					float: left;
+					padding: 8px 12px;
+					line-height: 1.42857143;
+					text-decoration: none;
+					margin-left: -1px;
+					z-index: 2;
+					color: #aea79f;
+					background-color: #f5f5f5;
+					border-color: #dddddd;
+					cursor: default;
+				}
+
+				.pagination-ys table > tbody > tr > td:first-child > a,
+				.pagination-ys table > tbody > tr > td:first-child > span {
+					margin-left: 0;
+					border-bottom-left-radius: 4px;
+					border-top-left-radius: 4px;
+				}
+
+				.pagination-ys table > tbody > tr > td:last-child > a,
+				.pagination-ys table > tbody > tr > td:last-child > span {
+					border-bottom-right-radius: 4px;
+					border-top-right-radius: 4px;
+				}
+
+				.pagination-ys table > tbody > tr > td > a:hover,
+				.pagination-ys table > tbody > tr > td > span:hover,
+				.pagination-ys table > tbody > tr > td > a:focus,
+				.pagination-ys table > tbody > tr > td > span:focus {
+					color: #97310e;
+					background-color: #eeeeee;
+					border-color: #dddddd;
+				}
+	</style>
+	<script lang="ja">
+		function SucessfulInsert() {
+			swal({
+				title: "Inserted!",
+				text: "Record Inserted Sucessfully.",
+				type: "success",
+				confirmButtonColor: "rgb(53, 155, 255)"
+			});
+			//swal("Inserted!", "Record Inserted Sucessfully.", "success", "rgb(53, 155, 255)");
+		}
+		function SucessfulUpdate() {
+			swal({
+				title: "Updated!",
+				text: "Record Updated Sucessfully.",
+				type: "success",
+				confirmButtonColor: "rgb(53, 155, 255)"
+			});
+			//swal("Inserted!", "Record Inserted Sucessfully.", "success", "rgb(53, 155, 255)");
+		}
+		function FinalizeUpdate() {
+			swal({
+				title: "Finalize!",
+				text: "Record Finalize Sucessfully.",
+				type: "success",
+				confirmButtonColor: "rgb(53, 155, 255)"
+			});
+			//swal("Inserted!", "Record Inserted Sucessfully.", "success", "rgb(53, 155, 255)");
+		}
+		function UnSucessfulInsert() {
+			swal({
+				title: "Error!",
+				text: "Error Inserting Record.",
+				type: "error",
+				confirmButtonColor: "rgb(53, 155, 255)"
+			});
+			//swal("Inserted!", "Record Inserted Sucessfully.", "success", "rgb(53, 155, 255)");
+		}
+		function SystemError() {
+			swal({
+				title: "Error!",
+				text: "System Error. Please Contact Adminstrator",
+				type: "error",
+				confirmButtonColor: "rgb(53, 155, 255)"
+			});
+			//swal("Inserted!", "Record Inserted Sucessfully.", "success", "rgb(53, 155, 255)");
+		}
+		function Delete() {
+			swal({
+				title: "Delete!",
+				text: "Record Deleted Sucessfully.",
+				type: "error",
+				confirmButtonColor: "rgb(53, 155, 255)"
+			});
+		}
+		function ValueExceded() {
+			swal({
+				title: "Error!",
+				text: "Requirement exceeded then Value of BAC Alloc.",
+				type: "error",
+				confirmButtonColor: "rgb(53, 155, 255)"
+			});
+			//swal("Inserted!", "Record Inserted Sucessfully.", "success", "rgb(53, 155, 255)");
+		}
+	</script>
+	<%: Scripts.Render("~/bundles/jquery") %>
+	<%: Scripts.Render("~/bundles/bootstrap")%>
+	<%: Scripts.Render("~/bundles/jqueryui")%>
+	<%: Scripts.Render("~/bundles/datepicker")%>
+<%--	<script src="../Scripts/MaskMoney.js"></script>
+	<script src="../assets/js/uncompressed/jquery.maskedinput.js"></script>--%>
+
+	<script src="../Scripts/app.min.js"></script>
+
+	<script src="../Scripts/AdminLTE/jquery.nicescroll.js"></script>
+		<script src="../Scripts/AdminLTE/scripts.js"></script>
+<%--<script src="../Scripts/AdminLTE/jquery.nicescroll.js"></script>
+
+	<script src="../Scripts/AdminLTE/scripts.js"></script>--%>
+
+	<script src="../assets/highcharts/js/highcharts.js"></script>
+	<script src="../Assets/highcharts/js/modules/exporting.js"></script>
+	<script src="../Assets/highcharts/js/modules/offline-exporting.js"></script>
+	<script src="../Assets/highcharts/js/highcharts-3d.js"></script>
+	<script>
+		Highcharts.setOptions({
+			colors: ['#DE0303', '#93FB0B', '#00F1FD', '#0065FD', '#B300FD', '#E49808', '#1EFF05', '#DBB7FB']
+
+		});
+	</script>
+	<asp:ContentPlaceHolder runat="server" ID="scripts">
+	</asp:ContentPlaceHolder>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+	<header class="main-header">
+
+
+		<!-- Logo -->
+		<a href="#" class="logo">
+			<!-- mini logo for sidebar mini 50x50 pixels -->
+			<span class="logo-mini">BMS</span>
+			<!-- logo for regular state and mobile devices -->
+			<span class="logo-lg"><b>BMS-Ver II</b></span>
+		</a>
+		<!-- Header Navbar: style can be found in header.less -->
+		<nav class="navbar navbar-static-top" role="navigation">
+			<!-- Sidebar toggle button-->
+			<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+				<span class="sr-only">Toggle navigation</span>
+			</a>
+			<div class="navbar-custom-menu">
+				<ul class="nav navbar-nav" style="margin-bottom: 0px !important;">
+					<!-- Messages: style can be found in dropdown.less-->
+
+
+
+
+					<!-- User Account: style can be found in dropdown.less -->
+
+					<li class="dropdown user user-menu">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="glyphicon glyphicon-user"></i>
+							<span>
+								<asp:Literal Text="" runat="server" ID="LtUserName" />
+								<i class="caret"></i>
+							</span>
+						</a>
+						<ul class="dropdown-menu">
+							<!-- User image -->
+							<li class="user-header bg-light-blue" style="background-color: #1D74D6 !important;">
+								<img id="ImgUser" runat="server" class="img-circle" alt="User Image" src="~/assets/user-5.png" />
+								<p>
+									<%   Response.Write(Session["FULL_NAME"].ToString()); %>
+
+									<small>User since <% Response.Write(DateTime.Parse(Session["CREATION_DATE"].ToString()).ToString("yyyy MMMM dd")); %>  </small>
+								</p>
+							</li>
+
+							<!-- Menu Footer-->
+							<li class="user-footer" style="background-color: #499BEA;">
+								<div class="pull-left">
+									<%--    Edit Profile link below --%>
+									<a href="../Pages/ChangePassword.aspx" class="btn btn-default btn-flat">Change Passwd</a>
+								</div>
+								<div class="pull-right">
+									<a href="<%=VirtualPathUtility.ToAbsolute("~/Login.aspx?logout=true") %>" class="btn btn-default btn-flat">Sign out</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<!-- Control Sidebar Toggle Button -->
+
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<div id="body">
+
+		<section>
+
+			<aside class="main-sidebar" style="/*background-color: rgb(60, 141, 188)*/
+background: linear-gradient(to bottom, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 43%, rgba(32,124,229,1) 55%, rgba(32,124,229,1) 100%) !important">
+				<!-- sidebar: style can be found in sidebar.less -->
+				<section class="sidebar">
+					<!-- Sidebar user panel -->
+
+					<ul class="sidebar-menu" runat="server" id="sidebarmenu">
+
+						<li class="active treeview">
+							<a href="#">
+								<i class="fa fa-dashboard"></i><span>Dashboard</span>
+							</a>
+
+						</li>
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-files-o"></i>
+								<span>Budget Estimates</span>
+								<i class="fa fa-angle-left pull-right"></i>
+							</a>
+							<ul class="treeview-menu">
+
+								<li><a href="../Pages/BgtEst.aspx"><i class="fa fa-circle-o"></i>Budget Estimate</a></li>
+								<li><a href="../Pages/BgtEstQuery.aspx"><i class="fa fa-circle-o"></i>Estimate Query</a></li>
+								<% if (Session["TempCheck"].ToString().Equals("LC1C"))
+								 { %>
+								<li><a href="../Pages/BgtDisb.aspx"><i class="fa fa-circle-o"></i>Estimate Disb</a></li>
+								<% } %>
+								<%-- VISIBLE ONLY TO BUDGET PLANS .......[Added on December 6,2016 AASIM] --%>
+								<% if (isPlnSuppAccess() || Session["USERNAME"].ToString().Equals("PLNBGT") || Session["USERNAME"].ToString().Equals("DIRISDEV"))
+								{ %>
+								<li><a href="BgtPlans.aspx"><i class="fa fa-circle-o"></i>Budget Plans</a></li>
+								<%--<li><a href="#"><i class="fa fa-circle-o"></i>Budget Plans</a></li>--%>
+								<% } %>
+
+								<% 
+									if (isPlnSuppAccess() || Session["USERNAME"].ToString().Equals("MGT") || Session["USERNAME"].ToString().Equals("DIRISDEV"))
+									{ %>
+								<li><a href="BgtSupport.aspx"><i class="fa fa-circle-o"></i>Budget Support</a></li>
+								<%--<li><a href="#"><i class="fa fa-circle-o"></i>Budget Plans</a></li>--%>
+								<% } %>
+								<%--    <li><a href="../Pages/BgtPlans.aspx"><i class="fa fa-circle-o"></i>Plans</a></li>--%>
+							</ul>
+						</li>
+
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-pie-chart"></i>
+								<span>Budget Prioritization</span>
+								<i class="fa fa-angle-left pull-right"></i>
+							</a>
+							<ul class="treeview-menu">
+
+								<li><a href="../Pages/BgtBPC.aspx"><i class="fa fa-circle-o"></i>User Requirements</a></li>
+								<%--	<li><a href="../Pages/BgtBPCInquiry.aspx"><i class="fa fa-circle-o"></i>User Inquiry</a></li>--%>
+								<% if (Session["USERNAME"].ToString().Equals("BGT") || Session["USERNAME"].ToString().Equals("DIRISDEV"))
+			     { %>
+								<li><a href="../Pages/BgtBPCRec.aspx"><i class="fa fa-circle-o"></i>BPC</a></li>
+								<%--<li><a href="../Pages/BgtFundsAllocationQuery.aspx"><i class="fa fa-circle-o"></i>Allocation Detail</a></li>--%>
+								<% } %>
+								<% if (Session["PSOAccess"].Equals("1") || Session["USERNAME"].ToString().Equals("DIRISDEV"))
+		   { %>
+								<li><a href="../Pages/BPCPSORec.aspx"><i class="fa fa-circle-o"></i>Rec By PSO</a></li>
+								<% } %>
+								<% if (Session["USERNAME"].ToString().Equals("PLNBGT") || Session["USERNAME"].ToString().Equals("DIRISDEV"))
+		   { %>
+								<li><a href="../Pages/BPCPlansRec.aspx"><i class="fa fa-circle-o"></i>Rec By Plans</a></li>
+								<% } %>
+								<% if (Session["USERNAME"].ToString().Equals("DCAS_EL") || Session["USERNAME"].ToString().Equals("DIRISDEV"))
+		   { %>
+								<li><a href="../Pages/BPCSupportRec.aspx"><i class="fa fa-circle-o"></i>Rec By DCAS(Supp)</a></li>
+								<% } %>
+
+								<% if (Session["USERNAME"].ToString().Equals("DCMBMS") || Session["USERNAME"].ToString().Equals("DIRISDEV") || Session["USERNAME"].ToString().Equals("MGT") || Session["USERNAME"].ToString().Equals("DLP") || Session["USERNAME"].ToString().Equals("DCM") || Session["USERNAME"].ToString().Equals("ACASLOG"))
+			     { %>
+								<li><a href="../Pages/BpcLogAuthn.aspx"><i class="fa fa-circle-o"></i>Log Auth</a></li>
+								<% } %>
+								<% if (Session["PlnSuppAccess"].Equals("1") || Session["USERNAME"].ToString().Equals("DIRISDEV"))
+			     { %>
+								<li><a href="../Pages/BpcBgtRec.aspx"><i class="fa fa-circle-o"></i>Rec By BGT</a></li>
+								<%--<li><a href="../Pages/BgtFundsAllocationQuery.aspx"><i class="fa fa-circle-o"></i>Allocation Detail</a></li>--%>
+								<% } %>
+								
+							</ul>
+						</li>
+                     
+                        	<li class="treeview">
+							<a href="#">
+								<i class="fa fa-laptop"></i>
+								<span>Budget Management</span>
+								<i class="fa fa-angle-left pull-right"></i>
+							</a>
+							<ul class="treeview-menu">
+
+								<% if (Session["PlnSuppAccess"].Equals("1") || Session["USERNAME"].ToString().Equals("DIRISDEV"))
+			     { %>
+								
+								<li><a href="../Pages/BgtFundsAllocationQuery.aspx"><i class="fa fa-circle-o"></i>Allocation Detail</a></li>
+								<% } %>
+								
+								
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-star"></i>
+								<span>Indents</span>
+								<i class="fa fa-angle-left pull-right"></i>
+							</a>
+							<ul class="treeview-menu">
+								<% if (Session["TempCheck"].ToString().Equals("BGT") || Session["USERNAME"].ToString().Equals("DIRISDEV"))
+		   { %>
+								<li><a href="../Pages/BgtIndentDataEntryAdmin.aspx"><i class="fa fa-circle-o"></i>Indent Admin</a></li>
+								<% } %>
+								<%--<li><a href="../Pages/BgtIndentDataEntry.aspx"><i class="fa fa-circle-o"></i>Indent Data Entry</a></li>--%>
+								
+								<% if (Session["USERNAME"].ToString().Equals("DDCM") || Session["USERNAME"].ToString().Equals("ADCM2") || Session["USERNAME"].ToString().Equals("DIRISDEV"))
+			     { %>
+								<li><a href="../Pages/BgtIndentDataEntry.aspx"><i class="fa fa-circle-o"></i>DCM Data Entry</a></li>
+								<% } %>
+								<% if (Session["PlnSuppAccess"].Equals("1") || Session["USERNAME"].ToString().Equals("DIRISDEV"))
+			     { %>
+								<li><a href="../Pages/BgtIndentDataEntryUser.aspx"><i class="fa fa-circle-o"></i>Users Data Entry</a></li>
+								<% } %>
+
+
+							</ul>
+						</li>
+							<li class="treeview">
+							<a href="#">
+								<i class="fa fa-star-o"></i>
+								<span>RRC</span>
+								<i class="fa fa-angle-left pull-right"></i>
+							</a>
+							<ul class="treeview-menu">
+								<% if (Session["TempCheck"].ToString().Equals("BGT") || Session["USERNAME"].ToString().Equals("DIRISDEV"))
+		   { %>
+								<li><a href="../Pages/BgtRRCCeilingManager.aspx"><i class="fa fa-circle-o"></i>Ceiling Manager</a></li>
+								<li><a href="../Pages/BgtRRCWpnSysSummary.aspx"><i class="fa fa-circle-o"></i>Weapon Wise Summary</a></li>
+								<% } %>
+								
+
+							</ul>
+						</li>
+					<%--	<li class="treeview">
+							<a href="#">
+								<i class="fa fa-laptop"></i>
+								<span>Budget Indents</span>
+								<i class="fa fa-angle-left pull-right"></i>
+							</a>
+							<ul class="treeview-menu">
+
+								<li><a href="../Pages/BgtIndentDataEntry.aspx"><i class="fa fa-circle-o"></i>Data Entry</a></li>
+								
+								
+							</ul>
+						</li>--%>
+						<%--  <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-laptop"></i>
+                                <span>Web Users</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-circle-o"></i>General</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Icons</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Buttons</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Sliders</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Timeline</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Modals</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-edit"></i><span>Roles</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-circle-o"></i>General Elements</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Advanced Elements</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Editors</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-table"></i><span>Check Post</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Simple tables</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Data tables</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-calendar"></i><span>Entry/Exit Log</span>
+                                <small class="label pull-right bg-red">3</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-envelope"></i><span>Summary Reports</span>
+                                <small class="label pull-right bg-yellow">12</small>
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-folder"></i><span>Examples</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Invoice</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Profile</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Login</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Register</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Lockscreen</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>404 Error</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>500 Error</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Blank Page</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-share"></i><span>Multilevel</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Level One</a></li>
+                                <li>
+                                    <a href="#"><i class="fa fa-circle-o"></i>Level One <i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="#"><i class="fa fa-circle-o"></i>Level Two</a></li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-circle-o"></i>Level Two <i class="fa fa-angle-left pull-right"></i></a>
+                                            <ul class="treeview-menu">
+                                                <li><a href="#"><i class="fa fa-circle-o"></i>Level Three</a></li>
+                                                <li><a href="#"><i class="fa fa-circle-o"></i>Level Three</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Level One</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="fa fa-book"></i><span>Documentation</span></a></li>--%>
+					</ul>
+				</section>
+				<!-- /.sidebar -->
+			</aside>
+			<span style="display: none">
+				<asp:Literal ID="ltTabMenu" runat="server"></asp:Literal>
+			</span>
+			<form id="Form1" runat="server">
+				<aside class="right-side pad">
+					<%--class="col-sm-12 col-md-12"--%>
+					<asp:ScriptManager ID="sm" runat="server"></asp:ScriptManager>
+					<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+						<%--<Triggers>
+        <asp:PostBackTrigger ControlID="PrintSummary" />
+    </Triggers>--%>
+						<ContentTemplate>
+
+							<section class="content" style="padding: 0px !important">
+								<div class="row">
+									<!-- left column -->
+									<div class="col-md-12">
+										<!-- general form elements -->
+
+										<asp:ContentPlaceHolder runat="server" ID="MainContent">
+											
+										</asp:ContentPlaceHolder>
+
+
+									</div>
+								</div>
+							</section>
+						</ContentTemplate>
+						
+					</asp:UpdatePanel>
+					<asp:UpdateProgress ID="UP" runat="server">
+						<ProgressTemplate>
+							<div id="dvupdateprogress" style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; background-color: black; opacity: .5; display: none;">
+								<%-- <img style="position: absolute; left: 52%; top: 40%; width: 5%;" src="http://ipindiaonline.gov.in/progress/images/progress.gif" alt="Alternate Text" />--%>
+								<img style="position: relative; z-index: auto; left: 52%; top: 40%; width: 4%" src="<%:VirtualPathUtility.ToAbsolute("~/Content/img/progress.gif")%>" alt="Alternate Text" />
+
+
+								<%--  <img src="<%:VirtualPathUtility.ToAbsolute("~/Content/img/avatar2.png")%>" class="img-circle" alt="user image" />--%>
+								<%-- <asp:Button ID="btnNext" runat="server" Text="Next" Style="position: absolute; left: 45%; top: 55%; width: 5%;" />
+
+                <asp:Button ID="btnSkip" runat="server" Text="Skip" Style="position: absolute; left: 52%; top: 55%; width: 5%;" />--%>
+							</div>
+						</ProgressTemplate>
+					</asp:UpdateProgress>
+
+				</aside>
+			</form>
+		</section>
+	</div>
+
+	<footer class="main-footer">
+		<div class="pull-right hidden-xs">
+			<%--<b>Version</b> 2.3.0--%>
+		</div>
+		<strong><%--Copyright © PAF.--%></strong> <%--All rights reserved.--%>
+	</footer>
+
+	<!-- ./wrapper -->
+
+
+	<script type="text/javascript">
+		function ReloadPage() {
+
+			window.location.reload();
+		}
+		$('#dvupdateprogress').css('display', 'block');
+		//document.body.oncopy = function () { return false; }
+		//document.body.oncut = function () { return false; }
+		//document.body.onpaste = function () { return false; }
+		//$(document).on('mousedown', 'body', function () { return false; });
+		//$(document).on('mousedown', 'input select', function () { return true; });
+		function onlyNumbers(evt) {
+			var e = event || evt; // for trans-browser compatibility
+			var charCode = e.which || e.keyCode;
+			if (charCode == 46)
+				return true;
+			else if (charCode > 31 && (charCode < 48 || charCode > 57 && charCode != 46))
+				return false;
+
+			return true;
+
+		}
+
+
+	</script>
+
+
+
+	<input type="hidden" id="selectPage" value="" clientidmode="Static" runat="server" />
+</body>
+</html>
